@@ -43,7 +43,7 @@ web_static/releases/{}/'.format(name_file, name_file))
     delete = run('rm /tmp/{}.tgz'.format(name_file))
     if delete.failed:
         return False
-    move = run('mv /data/web_static/releases/{}/web_static/* \
+    move = run('mv /data/web_static/releases/{}/web_static/*\
 /data/web_static/releases/{}/'.format(name_file, name_file))
     if move.failed:
         return False
@@ -54,7 +54,7 @@ web_static'.format(name_file))
     sym_l_del = run('rm -rf /data/web_static/current')
     if sym_l_del.failed:
         return False
-    symbolic = run('ln -s /data/web_static/releases/{}/ \
+    symbolic = run('ln -s /data/web_static/releases/{}/\
 /data/web_static/current'.format(name_file))
     if symbolic.failed:
         return False
